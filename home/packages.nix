@@ -57,7 +57,7 @@
       coreutils
 
       # Nix tooling
-      nixfmt-rfc-style
+      nixfmt
       nil
 
       # Archive tools

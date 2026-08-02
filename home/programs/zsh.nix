@@ -90,8 +90,8 @@
       timeout = if pkgs.stdenv.isDarwin then "gtimeout" else "timeout";
     };
 
-    # ── Init extra (runs after oh-my-zsh) ──────────────────────────────
-    initExtra = ''
+    # ── Init content (runs after oh-my-zsh) ────────────────────────────
+    initContent = ''
       # ── Powerlevel10k theme ──────────────────────────────────────────
       # Source p10k theme from the nix store
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme

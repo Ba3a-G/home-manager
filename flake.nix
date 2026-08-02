@@ -120,9 +120,10 @@
     {
       # ── Standalone Home Manager configurations (works on any Nix install) ──
       homeConfigurations = {
-        # Linux server (standalone HM on any distro)
+        # Linux server — auto-detects the local system architecture
+        # Works on both x86_64-linux and aarch64-linux
         "ba3a@server" = mkHomeConfig {
-          system = "x86_64-linux";
+          system = builtins.currentSystem;
           hostname = "server";
         };
 
@@ -130,12 +131,6 @@
         "ba3a@macbook" = mkHomeConfig {
           system = "aarch64-darwin";
           hostname = "macbook";
-        };
-
-        # ARM Linux (e.g. Raspberry Pi, ARM VPS)
-        "ba3a@arm-server" = mkHomeConfig {
-          system = "aarch64-linux";
-          hostname = "arm-server";
         };
       };
 
@@ -169,7 +164,7 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
-              nixfmt-rfc-style
+              nixfmt
               nil
             ];
           };
