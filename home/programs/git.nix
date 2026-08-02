@@ -46,7 +46,7 @@
 
     # ── Signing (HM module option, not renamed) ───────────────────────
     signing = {
-      key = "~/.ssh/id_mac.pub";
+      key = "~/.ssh/id_awsstaging.pub";
       signByDefault = true;
     };
   };
