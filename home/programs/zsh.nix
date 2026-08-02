@@ -48,7 +48,7 @@
       la = "eza -a --color=always --group-directories-first --icons";
       ll = "eza -l --color=always --group-directories-first --icons";
       lt = "eza -aT --color=always --group-directories-first --icons";
-      l. = "eza -a | egrep '^\\.'";
+      "l." = "eza -a | egrep '^\\.'";
 
       # bat as cat
       cat = "bat --style header --style snip --style changes --style header";
