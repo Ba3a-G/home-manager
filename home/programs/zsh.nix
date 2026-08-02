@@ -47,7 +47,7 @@
     # ── Aliases (ported from .zshrc) ───────────────────────────────────
     shellAliases = {
       # eza aliases
-      ls = "eza --color=always --group-directories-first --icons";
+      ls = "eza --color=always --group-directories-first --icons auto";
       la = "eza -a --color=always --group-directories-first --icons";
       ll = "eza -l --color=always --group-directories-first --icons";
       lt = "eza -aT --color=always --group-directories-first --icons";
