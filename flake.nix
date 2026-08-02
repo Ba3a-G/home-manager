@@ -120,10 +120,15 @@
     {
       # ── Standalone Home Manager configurations (works on any Nix install) ──
       homeConfigurations = {
-        # Linux server — auto-detects the local system architecture
-        # Works on both x86_64-linux and aarch64-linux
+        # ARM Linux server (e.g. AWS Graviton, Raspberry Pi)
         "ba3a@server" = mkHomeConfig {
-          system = builtins.currentSystem;
+          system = "aarch64-linux";
+          hostname = "server";
+        };
+
+        # x86_64 Linux server (if needed in future)
+        "ba3a@x86-server" = mkHomeConfig {
+          system = "x86_64-linux";
           hostname = "server";
         };
 
