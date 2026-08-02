@@ -31,6 +31,9 @@
       git
       gh
 
+      # Containers
+      docker
+
       # Cloud sync
       rclone
 
