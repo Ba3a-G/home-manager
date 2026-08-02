@@ -13,8 +13,8 @@
       zsh
       tmux
 
-      # Editor
-      neovim
+      # Editor — installed via programs.neovim in nvim.nix, not here
+      # neovim
 
       # File listing & cat replacement
       eza
