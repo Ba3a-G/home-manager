@@ -22,6 +22,6 @@
   home.file.".config/bat/themes/Catppuccin Mocha.tmTheme".source =
     pkgs.fetchurl {
       url = "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Mocha.tmTheme";
-      sha256 = lib.fakeSha256;
+      sha256 = "sha256-OVVm8IzrMBuTa5HAd2kO+U9662UbEhVT8gHJnCvUqnc=";
     };
 }
