@@ -45,10 +45,10 @@
       catppuccin
 
       # CPU usage in status bar
-      tmux-cpu
+      cpu
 
       # Battery status in status bar
-      tmux-battery
+      battery
 
       # Sensible defaults
       sensible
