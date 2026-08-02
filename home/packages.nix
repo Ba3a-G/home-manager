@@ -34,9 +34,6 @@
       # Cloud sync
       rclone
 
-      # Command fixer
-      thefuck
-
       # JSON processor
       jq
 

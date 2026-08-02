@@ -12,6 +12,10 @@
     # Use the latest Neovim from nixpkgs
     defaultEditor = true;
 
+    # Silence stateVersion warnings — we don't need Ruby/Python3 providers
+    withRuby = false;
+    withPython3 = false;
+
     # ── Neovim config ──────────────────────────────────────────────────
     # The kickstart.nvim config is complex (init.lua + lua/ directory tree).
     # We copy the entire nvim config from the dotfiles repo via home.file.

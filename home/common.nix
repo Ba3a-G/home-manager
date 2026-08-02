@@ -32,7 +32,7 @@
     ./programs/eza.nix
     ./programs/zoxide.nix
     ./programs/rclone.nix
-    ./programs/thefuck.nix
+    ./programs/thefuck.nix # pay-respects (thefuck successor)
   ];
 
   # ── XDG / config directory ──────────────────────────────────────────
