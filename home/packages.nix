@@ -78,7 +78,7 @@
       else
         [
           # Linux-specific
-          pinentry
+          pinentry-curses
           killall
           wl-clipboard
         ]

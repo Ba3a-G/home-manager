@@ -8,6 +8,9 @@
   programs.zsh = {
     enable = true;
 
+    # ── Use XDG config directory for zsh ───────────────────────────────
+    dotDir = "${config.xdg.configHome}/zsh";
+
     # ── Oh-My-Zsh ──────────────────────────────────────────────────────
     oh-my-zsh = {
       enable = true;
