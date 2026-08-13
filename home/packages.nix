@@ -69,6 +69,10 @@
 
       # Process management
       htop
+
+      # AI coding tools
+      opencode
+      t3code
     ]
     ++ (
       # Platform-specific packages
