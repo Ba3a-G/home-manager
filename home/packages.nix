@@ -72,7 +72,12 @@
 
       # AI coding tools
       opencode
-      t3code
+
+      # Build tools (build-essential equivalent + node-gyp + python3)
+      gcc
+      gnumake
+      python3
+      node-gyp
     ]
     ++ (
       # Platform-specific packages
