@@ -20,6 +20,8 @@
       enable = true;
       allowedTCPPorts = [
         22 # SSH
+        80 # HTTP
+        443 # HTTPS
       ];
     };
   };
@@ -74,6 +76,8 @@
     curl
     git
     htop
+    nginx
+    certbot
   ];
 
   # ── Nix settings ──────────────────────────────────────────────────────
@@ -95,6 +99,28 @@
 
   # ── Docker (optional) ─────────────────────────────────────────────────
   virtualisation.docker.enable = true; # Set to true if needed
+
+  # ── Nginx reverse proxy ───────────────────────────────────────────────
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    virtualHosts."coder.aryan.kr" = {
+      enableACME = true;
+      forceSSL = true;
+      locations."/" = {
+        proxyPass = "http://localhost:7080";
+        proxyWebsockets = true;
+      };
+    };
+  };
+
+  # ── ACME (Let's Encrypt via DNS challenge) ─────────────────────────────
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "mail@ba3a.tech";
+    defaults.dnsProvider = "cloudflare";
+    defaults.environmentFile = "/etc/secrets/acme-cloudflare-env";
+  };
 
   # ── Fonts (Nerd Font for terminals) ───────────────────────────────────
   fonts.packages = with pkgs; [
