@@ -185,13 +185,6 @@ resource "docker_container" "workspace" {
     read_only      = false
   }
 
-  # Mount host ~/.config as /home/coder/.config
-  volumes {
-    host_path      = "${var.host_home}/.config"
-    container_path = "/home/coder/.config"
-    read_only      = false
-  }
-
   labels {
     label = "coder.owner"
     value = data.coder_workspace_owner.me.name
