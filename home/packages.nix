@@ -2,6 +2,7 @@
   config,
   pkgs,
   stable,
+  inputs,
   ...
 }:
 {
@@ -75,7 +76,7 @@
       htop
 
       # AI coding tools
-      opencode
+      inputs.opencode.packages.${pkgs.system}.default
 
       # Build tools (build-essential equivalent + node-gyp + python3)
       gcc

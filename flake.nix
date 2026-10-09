@@ -21,6 +21,12 @@
       url = "github:catppuccin/tmux";
       flake = false;
     };
+
+    # Opencode AI coding assistant (tracked from upstream flake)
+    opencode = {
+      url = "github:sst/opencode";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -31,6 +37,7 @@
       home-manager,
       nix-darwin,
       catppuccin-tmux,
+      opencode,
       ...
     }@inputs:
     let
