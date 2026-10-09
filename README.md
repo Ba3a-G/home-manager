@@ -18,6 +18,8 @@ Works on **NixOS**, **any Linux distro with Nix**, and **macOS** (via nix-darwin
 | `fastfetch` | System info display (neofetch alternative) |
 | `git` + `gh` | Version control + GitHub CLI |
 | `rclone` | Cloud storage sync |
+| `netbird` | VPN mesh network |
+| `cloudflared` | Cloudflare Tunnel client |
 | `thefuck` | Command correction |
 | `jq` | JSON processor |
 | `fzf` | Fuzzy finder |
@@ -62,7 +64,7 @@ home-manager/
 │   │   └── configuration.nix    # NixOS server system config
 │   └── darwin/
 │       └── configuration.nix    # macOS system config (nix-darwin)
-└── README.md                   # This file
+└── README.md                    # This file
 ```
 
 ## Setup
@@ -168,6 +170,8 @@ darwin-rebuild switch --flake .#macbook
 
 - **Secrets:** `rclone.conf` and `llogin/config.toml` contain plaintext credentials.
   These are NOT managed by Nix. Copy them manually or use `sops-nix`/`agenix`.
+- **Podman:** Enabled on NixOS with Docker compatibility (`docker` command maps to Podman).
+- **NetBird / cloudflared:** Installed as packages on all platforms; NixOS also enables the system services. Configure tokens/credentials manually after install.
 - **Neovim config:** The kickstart.nvim config is managed by yadm, not Nix.
   Nix only installs the `neovim` binary and its runtime dependencies (treesitter,
   LSP servers, formatters).

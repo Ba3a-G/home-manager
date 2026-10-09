@@ -32,7 +32,11 @@
       gh
 
       # Containers
-      docker
+      podman
+
+      # Networking / VPN / Tunnel
+      netbird
+      cloudflared
 
       # Cloud sync
       rclone

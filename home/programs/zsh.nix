@@ -76,11 +76,8 @@
       dir = "dir --color=auto";
       vdir = "vdir --color=auto";
 
-      # Docker (if installed)
-      dps = "docker ps";
-
-      # Coder CLI in Docker — mounts ~/fuckwindows as /workspace
-      coder = "docker run -it --rm -v $HOME/fuckwindows:/workspace -v $HOME/.coder:/home/coder/.coder -w /workspace codercom/coder:latest";
+      # Podman (if installed)
+      dps = "podman ps";
 
       # macOS-specific (harmless on Linux)
       disablesleep = "sudo pmset disablesleep 1";

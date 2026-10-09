@@ -48,7 +48,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "docker"
     ];
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
@@ -97,21 +96,17 @@
     };
   };
 
-  # ── Docker (optional) ─────────────────────────────────────────────────
-  virtualisation.docker.enable = true; # Set to true if needed
+  # ── Podman ────────────────────────────────────────────────────────────
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   # ── Nginx reverse proxy ───────────────────────────────────────────────
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
-    virtualHosts."coder.aryan.kr" = {
-      enableACME = true;
-      forceSSL = true;
-      locations."/" = {
-        proxyPass = "http://localhost:7080";
-        proxyWebsockets = true;
-      };
-    };
   };
 
   # ── ACME (Let's Encrypt via DNS challenge) ─────────────────────────────
@@ -120,6 +115,16 @@
     defaults.email = "mail@ba3a.tech";
     defaults.dnsProvider = "cloudflare";
     defaults.environmentFile = "/etc/secrets/acme-cloudflare-env";
+  };
+
+  # ── NetBird VPN ────────────────────────────────────────────────────────
+  services.netbird = {
+    enable = true;
+  };
+
+  # ── Cloudflare Tunnel ──────────────────────────────────────────────────
+  services.cloudflared = {
+    enable = true;
   };
 
   # ── Fonts (Nerd Font for terminals) ───────────────────────────────────
