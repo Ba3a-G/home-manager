@@ -50,6 +50,7 @@
       # Languages
       go
       bun
+      nodejs
 
       # Search & find
       ripgrep
